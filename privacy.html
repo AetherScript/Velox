@@ -6,282 +6,112 @@
 <title>Politique de confidentialité — Velox</title>
 <meta name="description" content="Politique de confidentialité de l'application Velox.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
-  --bg: #03020a;
-  --bg2: #07050f;
-  --text: #F0EEF8;
-  --text2: rgba(240,238,248,0.5);
-  --text3: rgba(240,238,248,0.22);
-  --glass: rgba(255,255,255,0.038);
-  --glass2: rgba(255,255,255,0.06);
-  --border: rgba(255,255,255,0.09);
-  --border2: rgba(255,255,255,0.16);
-  --green: #3ddc84;
-  --green2: rgba(61,220,132,0.12);
-  --sep: rgba(255,255,255,0.06);
-  --accent: #a78bfa;
-  --accent2: #60a5fa;
-  --pink: #f472b6;
+  --bg: #000; --text: #F5F5F7; --text2: rgba(245,245,247,0.55);
+  --text3: rgba(245,245,247,0.2); --border: rgba(255,255,255,0.1);
+  --glass: rgba(255,255,255,0.04); --sep: rgba(255,255,255,0.07);
 }
-
-html { scroll-behavior: smooth; }
 body {
-  font-family: 'DM Sans', -apple-system, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg); color: var(--text);
+  -webkit-font-smoothing: antialiased; line-height: 1.7;
 }
-
-/* ── CURSOR GLOW ── */
-.cursor-glow {
-  position: fixed;
-  width: 400px; height: 400px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(167,139,250,0.06) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-  transform: translate(-50%, -50%);
-  transition: left 0.4s ease, top 0.4s ease;
-}
-
-/* ── ORBS ── */
-.orb { position: fixed; border-radius: 50%; filter: blur(110px); pointer-events: none; z-index: 0; animation: drift 22s ease-in-out infinite; }
-.orb1 { width: 700px; height: 700px; background: rgba(109,40,217,0.22); top: -250px; left: -200px; }
-.orb2 { width: 550px; height: 550px; background: rgba(219,39,119,0.13); bottom: -120px; right: -120px; animation-delay: -9s; animation-duration: 18s; }
-.orb3 { width: 400px; height: 400px; background: rgba(14,165,233,0.1); top: 45%; left: 50%; animation-delay: -5s; animation-duration: 28s; }
-.orb4 { width: 300px; height: 300px; background: rgba(167,139,250,0.09); top: 30%; right: 10%; animation-delay: -13s; animation-duration: 20s; }
-@keyframes drift {
-  0%,100% { transform: translate(0,0) scale(1); }
-  33% { transform: translate(30px,-22px) scale(1.05); }
-  66% { transform: translate(-20px,30px) scale(0.95); }
-}
-
-/* ── GRID OVERLAY ── */
-body::after {
-  content: '';
-  position: fixed; inset: 0; z-index: 0; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
-  background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
-}
-
-/* ── NOISE ── */
+.orb { position: fixed; border-radius: 50%; filter: blur(90px); pointer-events: none; z-index: 0; }
+.orb1 { width: 500px; height: 500px; background: rgba(120,80,255,0.2); top: -150px; left: -100px; }
+.orb2 { width: 400px; height: 400px; background: rgba(255,60,120,0.12); bottom: 10%; right: -100px; }
 body::before {
-  content: '';
-  position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.35;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
 }
-
-/* ── NAV ── */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  position: sticky; top: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 16px 44px;
-  background: rgba(3,2,10,0.5);
-  backdrop-filter: blur(50px) saturate(180%);
+  padding: 16px 40px;
+  background: rgba(0,0,0,0.5); backdrop-filter: blur(40px);
   border-bottom: 0.5px solid var(--sep);
 }
 .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .nav-logo-icon {
-  width: 36px; height: 36px; border-radius: 11px;
-  background: linear-gradient(135deg, rgba(167,139,250,0.15), rgba(96,165,250,0.1));
-  border: 0.5px solid rgba(167,139,250,0.25);
+  width: 32px; height: 32px; border-radius: 9px;
+  background: rgba(255,255,255,0.07); border: 0.5px solid rgba(255,255,255,0.14);
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 0 16px rgba(167,139,250,0.12);
 }
-.nav-logo-text {
-  font-family: 'Sora', sans-serif;
-  font-size: 16px; font-weight: 700; color: var(--text); letter-spacing: -0.03em;
-}
+.nav-logo-text { font-size: 15px; font-weight: 600; color: var(--text); letter-spacing: -0.02em; }
 .nav-back {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-size: 13px; font-weight: 500; color: var(--text3);
-  text-decoration: none;
-  padding: 8px 16px;
-  background: var(--glass);
-  border: 0.5px solid var(--border);
-  border-radius: 10px;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-  font-family: 'Sora', sans-serif;
+  font-size: 13px; color: var(--text3); text-decoration: none;
+  display: flex; align-items: center; gap: 5px;
+  transition: color 0.2s;
 }
-.nav-back:hover { background: var(--glass2); color: var(--text2); border-color: var(--border2); }
+.nav-back:hover { color: var(--text2); }
 
-/* ── MAIN ── */
 main {
   position: relative; z-index: 2;
-  max-width: 720px; margin: 0 auto;
-  padding: 130px 24px 100px;
+  max-width: 680px; margin: 0 auto;
+  padding: 64px 24px 100px;
 }
 
-/* ── PAGE HEADER ── */
-.page-header {
-  margin-bottom: 52px;
-  animation: fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) both;
-}
+.page-header { margin-bottom: 52px; }
 .page-label {
-  font-family: 'Sora', sans-serif;
-  font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--accent); margin-bottom: 16px; opacity: 0.8;
+  font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 12px;
 }
 .page-title {
-  font-family: 'Sora', sans-serif;
-  font-size: clamp(32px, 5vw, 52px); font-weight: 700;
-  letter-spacing: -0.04em; line-height: 1.06;
-  color: var(--text); margin-bottom: 18px;
+  font-size: 36px; font-weight: 600; letter-spacing: -0.03em;
+  color: var(--text); line-height: 1.1; margin-bottom: 16px;
 }
-.page-title .gradient-text {
-  background: linear-gradient(135deg, #c084fc 0%, #818cf8 45%, #38bdf8 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-.page-meta {
-  font-size: 13px; color: var(--text3); display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
-}
-.page-meta-sep { width: 3px; height: 3px; border-radius: 50%; background: var(--text3); }
+.page-meta { font-size: 13px; color: var(--text3); }
 .page-meta span { color: var(--text2); }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(22px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+.divider { height: 0.5px; background: var(--sep); margin: 36px 0; }
 
-/* ── HIGHLIGHT BOX ── */
-.highlight-box {
-  background: linear-gradient(135deg, rgba(61,220,132,0.06), rgba(56,189,248,0.04));
-  border: 0.5px solid rgba(61,220,132,0.2);
-  border-radius: 20px; padding: 22px 24px;
-  margin-bottom: 44px;
-  display: flex; align-items: flex-start; gap: 14px;
-  animation: fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.1s both;
-}
-.highlight-icon {
-  width: 36px; height: 36px; border-radius: 11px; flex-shrink: 0;
-  background: var(--green2); border: 0.5px solid rgba(61,220,132,0.22);
-  display: flex; align-items: center; justify-content: center;
-  margin-top: 1px;
-}
-.highlight-box p {
-  font-size: 14px; color: var(--text2); line-height: 1.75; margin: 0;
-}
-
-/* ── DIVIDER ── */
-.divider {
-  height: 0.5px;
-  background: linear-gradient(90deg, transparent, var(--sep) 20%, var(--sep) 80%, transparent);
-  margin: 40px 0;
-}
-
-/* ── SECTIONS ── */
-.policy-section { margin-bottom: 40px; }
-.policy-section h2 {
-  font-family: 'Sora', sans-serif;
-  font-size: 16px; font-weight: 700; color: var(--text);
+section { margin-bottom: 36px; }
+h2 {
+  font-size: 18px; font-weight: 600; color: var(--text);
   letter-spacing: -0.025em; margin-bottom: 14px;
-  display: flex; align-items: center; gap: 10px;
 }
-.section-num {
-  width: 28px; height: 28px; border-radius: 9px; flex-shrink: 0;
-  background: linear-gradient(135deg, rgba(167,139,250,0.12), rgba(96,165,250,0.08));
-  border: 0.5px solid rgba(167,139,250,0.2);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Sora', sans-serif;
-  font-size: 11px; font-weight: 700; color: var(--accent);
-}
-.policy-section p {
-  font-size: 14px; color: var(--text2); line-height: 1.8; margin-bottom: 12px;
-}
-.policy-section p:last-child { margin-bottom: 0; }
-.policy-section ul { padding-left: 0; margin-bottom: 12px; list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.policy-section li {
-  font-size: 14px; color: var(--text2); line-height: 1.75;
-  padding: 11px 15px;
-  background: var(--glass);
-  border: 0.5px solid var(--border);
-  border-radius: 12px;
-  display: flex; align-items: flex-start; gap: 10px;
-}
-.policy-section li::before {
-  content: '';
-  width: 5px; height: 5px; border-radius: 50%;
-  background: var(--accent); flex-shrink: 0; margin-top: 7px; opacity: 0.7;
-}
-.policy-section li strong { color: var(--text); font-weight: 600; }
-code {
-  font-size: 12.5px;
-  background: rgba(255,255,255,0.06);
-  border: 0.5px solid var(--border);
-  padding: 2px 7px; border-radius: 6px;
-  font-family: 'SF Mono', 'Fira Code', monospace;
-  color: var(--accent);
-}
-a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
-a:hover { opacity: 0.75; text-decoration: underline; }
+p { font-size: 14.5px; color: var(--text2); line-height: 1.8; margin-bottom: 12px; }
+p:last-child { margin-bottom: 0; }
+ul { padding-left: 20px; margin-bottom: 12px; }
+li { font-size: 14.5px; color: var(--text2); line-height: 1.8; margin-bottom: 4px; }
 
-/* ── SCROLL REVEAL ── */
-.reveal {
-  opacity: 0; transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+.highlight-box {
+  background: var(--glass); border: 0.5px solid var(--border);
+  border-radius: 14px; padding: 18px 20px; margin: 20px 0;
 }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.highlight-box p { margin: 0; }
 
-/* ── FOOTER ── */
+a { color: rgba(129,140,248,0.9); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
 footer {
   position: relative; z-index: 2;
   border-top: 0.5px solid var(--sep);
-  padding: 28px 44px;
-  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+  padding: 24px 40px;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
 }
-.footer-left { font-size: 12.5px; color: var(--text3); }
-.footer-links { display: flex; gap: 24px; }
-.footer-links a { font-size: 12.5px; color: var(--text3); text-decoration: none; transition: color 0.2s; }
+.footer-left { font-size: 12px; color: var(--text3); }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { font-size: 12px; color: var(--text3); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--text2); }
 
-.insta-tag {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-size: 12px; font-weight: 500;
-  background: linear-gradient(90deg, #f9a84d, #f3455e, #c02ea1, #8c39d4);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-  text-decoration: none;
-  padding: 4px 11px 4px 9px;
-  background-color: rgba(255,255,255,0.03);
-  border: 0.5px solid rgba(193,46,161,0.22);
-  border-radius: 99px; transition: border-color 0.2s, box-shadow 0.2s;
-}
-.insta-tag:hover { border-color: rgba(243,69,94,0.4); box-shadow: 0 0 14px rgba(193,46,161,0.12); opacity: 1; text-decoration: none; }
-
-@media (max-width: 640px) {
-  nav { padding: 14px 20px; }
-  footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
-}
+@media (max-width: 600px) { nav, footer { padding-left: 20px; padding-right: 20px; } }
 </style>
 </head>
 <body>
 
 <div class="orb orb1"></div>
 <div class="orb orb2"></div>
-<div class="orb orb3"></div>
-<div class="orb orb4"></div>
-<div class="cursor-glow" id="cursorGlow"></div>
 
-<!-- NAV -->
 <nav>
   <a class="nav-logo" href="./index.html">
     <div class="nav-logo-icon">
-      <svg width="22" height="22" viewBox="0 0 26 26" fill="none">
+      <svg width="20" height="20" viewBox="0 0 26 26" fill="none">
         <defs>
-          <linearGradient id="g1" x1="0" y1="0" x2="26" y2="26" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#c084fc"/><stop offset="50%" stop-color="#818cf8"/><stop offset="100%" stop-color="#38bdf8"/>
-          </linearGradient>
-          <linearGradient id="g2" x1="26" y1="0" x2="0" y2="26" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#818cf8"/>
-          </linearGradient>
+          <linearGradient id="g1" x1="0" y1="0" x2="26" y2="26" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#c084fc"/><stop offset="50%" stop-color="#818cf8"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+          <linearGradient id="g2" x1="26" y1="0" x2="0" y2="26" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#f472b6"/><stop offset="100%" stop-color="#818cf8"/></linearGradient>
         </defs>
         <path d="M21 3C21 3 14 4 9 9C5 13 4.5 19 4.5 19C4.5 19 7 17.5 9.5 17C9.5 17 8 21 7 23C7 23 11 21 13 17C15 13 15.5 8 21 3Z" fill="url(#g1)" opacity="0.9"/>
         <path d="M21 3C18 8 14 12 7 23" stroke="url(#g2)" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
@@ -291,140 +121,91 @@ footer {
     <span class="nav-logo-text">Velox</span>
   </a>
   <a class="nav-back" href="./index.html">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
     Retour
   </a>
 </nav>
 
 <main>
-  <!-- HEADER -->
   <div class="page-header">
     <div class="page-label">Légal</div>
-    <h1 class="page-title">Politique de<br><span class="gradient-text">confidentialité</span></h1>
-    <div class="page-meta">
-      <span>Dernière mise à jour : <span>30 mars 2026</span></span>
-      <div class="page-meta-sep"></div>
-      <span>Application : <span>Velox v1.0</span></span>
-      <div class="page-meta-sep"></div>
-      <span>© <span>2026</span> AetherScript</span>
-    </div>
+    <h1 class="page-title">Politique de confidentialité</h1>
+    <div class="page-meta">Dernière mise à jour : <span>30 mars 2026</span> · Application : <span>Velox</span></div>
   </div>
 
-  <!-- HIGHLIGHT -->
   <div class="highlight-box">
-    <div class="highlight-icon">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(61,220,132,0.9)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-    </div>
     <p>Velox est une application de bureau qui fonctionne entièrement en local sur ton ordinateur. Nous ne collectons, ne stockons et ne vendons aucune donnée personnelle sur des serveurs tiers.</p>
   </div>
 
-  <!-- SECTION 1 -->
-  <div class="divider reveal"></div>
-  <div class="policy-section reveal">
-    <h2><div class="section-num">1</div>Présentation</h2>
-    <p>Velox ("l'Application") est un outil de rédaction d'emails assistée par intelligence artificielle, développé par AetherScript (<a href="https://instagram.com/aminebhll" target="_blank">@aminebhll</a>). Cette politique décrit la façon dont l'Application traite tes informations lors de son utilisation.</p>
-  </div>
+  <div class="divider"></div>
 
-  <!-- SECTION 2 -->
-  <div class="policy-section reveal" style="transition-delay:0.05s;">
-    <h2><div class="section-num">2</div>Données collectées</h2>
+  <section>
+    <h2>1. Présentation</h2>
+    <p>Velox ("l'Application") est un outil de rédaction d'emails assistée par intelligence artificielle, développé par AetherScript (<a href="https://instagram.com/aminebhll" target="_blank">@aminebhll</a>). Cette politique décrit la façon dont l'Application traite tes informations lors de son utilisation.</p>
+  </section>
+
+  <section>
+    <h2>2. Données collectées</h2>
     <p>L'Application accède aux informations suivantes :</p>
     <ul>
-      <li><strong>Adresse email Google</strong> — utilisée uniquement pour afficher ton compte connecté et pour envoyer des emails en ton nom.</li>
-      <li><strong>Token d'authentification OAuth2</strong> — stocké localement sur ton ordinateur dans un fichier <code>token.json</code> à côté de l'application. Jamais transmis à nos serveurs.</li>
-      <li><strong>Contenu des emails générés</strong> — les descriptions que tu fournis sont envoyées à l'API Groq pour générer le texte de l'email. Elles ne sont pas conservées par Velox.</li>
+      <li><strong style="color:var(--text);">Adresse email Google</strong> — utilisée uniquement pour afficher ton compte connecté et pour envoyer des emails en ton nom.</li>
+      <li><strong style="color:var(--text);">Token d'authentification OAuth2</strong> — stocké localement sur ton ordinateur. Jamais transmis à nos serveurs.</li>
+      <li><strong style="color:var(--text);">Contenu des emails générés</strong> — les descriptions que tu fournis sont envoyées à l'API Groq pour générer le texte de l'email. Elles ne sont pas conservées par Velox.</li>
     </ul>
-  </div>
+  </section>
 
-  <!-- SECTION 3 -->
-  <div class="policy-section reveal" style="transition-delay:0.08s;">
-    <h2><div class="section-num">3</div>Services tiers utilisés</h2>
+  <section>
+    <h2>3. Services tiers utilisés</h2>
     <p>Velox utilise les services suivants :</p>
     <ul>
-      <li><strong>Google OAuth2 / Gmail API</strong> — pour l'authentification et l'envoi d'emails. Soumis à la <a href="https://policies.google.com/privacy" target="_blank">politique de confidentialité de Google</a>.</li>
-      <li><strong>Groq API</strong> — pour la génération de texte via le modèle LLaMA 3.3. Les descriptions d'emails sont transmises à Groq pour traitement. Soumis à la <a href="https://groq.com/privacy-policy/" target="_blank">politique de confidentialité de Groq</a>.</li>
+      <li><strong style="color:var(--text);">Google OAuth2 / Gmail API</strong> — pour l'authentification et l'envoi d'emails. Soumis à la <a href="https://policies.google.com/privacy" target="_blank">politique de confidentialité de Google</a>.</li>
+      <li><strong style="color:var(--text);">Groq API</strong> — pour la génération de texte via le modèle LLaMA 3.3. Les descriptions d'emails sont transmises à Groq pour traitement. Soumis à la <a href="https://groq.com/privacy-policy/" target="_blank">politique de confidentialité de Groq</a>.</li>
     </ul>
     <p>Velox lui-même ne dispose d'aucun serveur et ne reçoit aucune donnée.</p>
-  </div>
+  </section>
 
-  <!-- SECTION 4 -->
-  <div class="policy-section reveal" style="transition-delay:0.1s;">
-    <h2><div class="section-num">4</div>Stockage des données</h2>
-    <p>Toutes les données (token d'authentification Google) sont stockées exclusivement sur ton appareil local. Tu peux supprimer ce fichier à tout moment pour révoquer l'accès, ou te déconnecter directement depuis l'interface de l'application.</p>
-  </div>
+  <section>
+    <h2>4. Stockage des données</h2>
+    <p>Toutes les données (token d'authentification Google) sont stockées exclusivement sur ton appareil local. Tu peux te déconnecter directement depuis l'interface de l'application pour révoquer l'accès.</p>
+  </section>
 
-  <!-- SECTION 5 -->
-  <div class="policy-section reveal" style="transition-delay:0.12s;">
-    <h2><div class="section-num">5</div>Partage des données</h2>
+  <section>
+    <h2>5. Partage des données</h2>
     <p>Velox ne vend, ne loue et ne partage aucune donnée personnelle avec des tiers, à l'exception des services nécessaires au fonctionnement de l'application listés à l'article 3.</p>
-  </div>
+  </section>
 
-  <!-- SECTION 6 -->
-  <div class="policy-section reveal" style="transition-delay:0.14s;">
-    <h2><div class="section-num">6</div>Sécurité</h2>
-    <p>L'authentification est réalisée via le protocole OAuth2 officiel de Google. Tes identifiants Gmail ne sont jamais vus ni stockés par Velox. L'accès est limité à la permission d'envoi d'emails (<code>gmail.send</code>) uniquement.</p>
-  </div>
+  <section>
+    <h2>6. Sécurité</h2>
+    <p>L'authentification est réalisée via le protocole OAuth2 officiel de Google. Tes identifiants Gmail ne sont jamais vus ni stockés par Velox. L'accès est limité à la permission d'envoi d'emails (<code style="font-size:13px;background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:5px;">gmail.send</code>) uniquement.</p>
+  </section>
 
-  <!-- SECTION 7 -->
-  <div class="policy-section reveal" style="transition-delay:0.16s;">
-    <h2><div class="section-num">7</div>Tes droits</h2>
+  <section>
+    <h2>7. Tes droits</h2>
     <p>Tu peux à tout moment :</p>
     <ul>
       <li>Te déconnecter de l'application pour supprimer le token local.</li>
       <li>Révoquer l'accès de Velox depuis <a href="https://myaccount.google.com/permissions" target="_blank">ton compte Google</a>.</li>
-      <li>Supprimer manuellement le fichier <code>token.json</code> présent dans le dossier de l'application.</li>
     </ul>
-  </div>
+  </section>
 
-  <!-- SECTION 8 -->
-  <div class="policy-section reveal" style="transition-delay:0.18s;">
-    <h2><div class="section-num">8</div>Contact</h2>
-    <p>Pour toute question relative à cette politique de confidentialité, tu peux nous contacter via Instagram :</p>
-    <p>
-      <a class="insta-tag" href="https://instagram.com/aminebhll" target="_blank">
-        <svg width="11" height="11" viewBox="0 0 24 24" fill="none">
-          <defs><linearGradient id="ig" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#f9a84d"/><stop offset="30%" stop-color="#f3455e"/><stop offset="65%" stop-color="#c02ea1"/><stop offset="100%" stop-color="#8c39d4"/></linearGradient></defs>
-          <rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#ig)" stroke-width="2.5" fill="none"/>
-          <circle cx="12" cy="12" r="4" stroke="url(#ig)" stroke-width="2.5" fill="none"/>
-          <circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig)"/>
-        </svg>
-        @aminebhll
-      </a>
-    </p>
-  </div>
+  <section>
+    <h2>8. Contact</h2>
+    <p>Pour toute question relative à cette politique de confidentialité, tu peux nous contacter via Instagram : <a href="https://instagram.com/aminebhll" target="_blank">@aminebhll</a></p>
+  </section>
 
-  <!-- SECTION 9 -->
-  <div class="policy-section reveal" style="transition-delay:0.2s;">
-    <h2><div class="section-num">9</div>Modifications</h2>
+  <section>
+    <h2>9. Modifications</h2>
     <p>Cette politique peut être mise à jour. La date de dernière révision est indiquée en haut de cette page.</p>
-  </div>
+  </section>
 </main>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-left">© 2026 Velox · built by <a href="https://instagram.com/aminebhll" target="_blank" style="color:var(--text3);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--text2)'" onmouseout="this.style.color='var(--text3)'">@aminebhll</a></div>
+  <div class="footer-left">© 2026 Velox · AetherScript</div>
   <div class="footer-links">
     <a href="./index.html">Accueil</a>
-    <a href="https://github.com/AetherScript/velox/releases" target="_blank">GitHub</a>
+    <a href="https://github.com/AetherScript/velox" target="_blank">GitHub</a>
   </div>
 </footer>
 
-<script>
-// Cursor glow
-const glow = document.getElementById('cursorGlow');
-document.addEventListener('mousemove', e => {
-  glow.style.left = e.clientX + 'px';
-  glow.style.top = e.clientY + 'px';
-});
-
-// Scroll reveal
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('visible');
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
 </body>
 </html>
